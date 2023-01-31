@@ -43,7 +43,7 @@ class HomeActivity : AppCompatActivity() {
             //Toast.makeText(this, "Desserts", Toast.LENGTH_LONG).show()
             //val intent = Intent(this, PlatsActivity::class.java)
             //startActivity(intent)
-            showCategory(Category.DESSERT)
+            showCategory(Category.DESSERT) //Quand on clique sur le bouton dessert, on affiche la page dessert et le titre DESSERT
         }
     }
 
