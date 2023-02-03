@@ -18,7 +18,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        buttonsListener()
+        buttonsListener() //Appel de la fonction pour les boutons
     }
 
     private fun buttonsListener() {
@@ -48,8 +48,8 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showCategory(category: Category){
-        val intent = Intent(this, PlatsActivity::class.java)
-        intent.putExtra(PlatsActivity.extraKey, category)
+        val intent = Intent(this, PlatsActivity::class.java) //Category correspond à PlatsActivity
+        intent.putExtra(PlatsActivity.extraKey, category) //putExtra pour rajouter le titre des pages
         startActivity(intent)
     }
 }

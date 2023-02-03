@@ -2,7 +2,7 @@ package com.example.androidrestaurant.network
 
 class NetworkConstants {
     companion object {
-        val url = "http://test.api.catering.bluecodegames.com/menu"
+        val url = "http://test.api.catering.bluecodegames.com/menu" //API du menu
 
         val idShopKey = "id_shop" //val ne peut pas être modifié et var peut être modifié
     }

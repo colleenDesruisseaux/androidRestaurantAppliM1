@@ -1,11 +1,9 @@
 package com.example.androidrestaurant
 
-import android.app.DownloadManager.Request
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request.Method
 import com.android.volley.toolbox.JsonObjectRequest
@@ -20,7 +18,7 @@ enum class Category { STARTER , MAIN , DESSERT }
 
 class PlatsActivity : AppCompatActivity() {
 
-    companion object {
+    companion object { //companion object permet de fixer extraKey
         val extraKey = "extraKey"
     }
 
@@ -49,6 +47,7 @@ class PlatsActivity : AppCompatActivity() {
             {result ->
                     //Success of request
                     Log.d("request", result.toString(2))
+                    parseData(result.toString())
             },
             {error ->
                     //Error when request
@@ -68,8 +67,8 @@ class PlatsActivity : AppCompatActivity() {
 
     private fun showDatas(category: com.example.androidrestaurant.network.Category){
         binding.recyclerView.layoutManager = LinearLayoutManager(this) //ON AFFICHE LISTE DE STRING, ON VEUT AFFICHER LISTE DE PLAT
-        binding.recyclerView.adapter = CustomAdapter(listOf("1", "2", "3")){
-            val intent = Intent(this, DetailActivity::class.java)
+        binding.recyclerView.adapter = CustomAdapter(category.items){
+            val intent = Intent(this, DetailActivity::class.java) //Quand on clique sur le plat, on est redirigé vers DetailActivity qui est le détail du plat sélectionné
             startActivity(intent)
         } //Une lambda c'est juste des accolades. it c'est la position donc à la place de it, on peut écrire position ->
     }
