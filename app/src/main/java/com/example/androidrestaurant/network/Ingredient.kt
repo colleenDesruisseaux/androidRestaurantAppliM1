@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 class Ingredient (
-    @SerializedName("ingredients") val ingredients: String //Affiche le nom de l'ingrédient
+    @SerializedName("name_fr") val nameIngr: String //Affiche le nom de l'ingrédient
 ): Serializable

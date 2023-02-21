@@ -69,6 +69,7 @@ class PlatsActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this) //ON AFFICHE LISTE DE STRING, ON VEUT AFFICHER LISTE DE PLAT
         binding.recyclerView.adapter = CustomAdapter(category.items){
             val intent = Intent(this, DetailActivity::class.java) //Quand on clique sur le plat, on est redirigé vers DetailActivity qui est le détail du plat sélectionné
+            intent.putExtra(DetailActivity.PLATE_EXTRA, it)
             startActivity(intent)
         } //Une lambda c'est juste des accolades. it c'est la position donc à la place de it, on peut écrire position ->
     }
