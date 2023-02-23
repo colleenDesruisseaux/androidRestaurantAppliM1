@@ -2,10 +2,12 @@ package com.example.androidrestaurant
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import com.example.androidrestaurant.databinding.ActivityDetailBinding
 import com.example.androidrestaurant.network.Plate
+import com.example.androidrestaurant.network.Price
 import com.squareup.picasso.Picasso
 
 class DetailActivity : AppCompatActivity() {
@@ -27,17 +29,24 @@ class DetailActivity : AppCompatActivity() {
         val ingredients = plate?.ingredients?.map {it.nameIngr}?.joinToString(", ") ?: ""
         binding.textView.text = ingredients
         binding.quantity.text = qt.toString()
+        binding.boutonTotal.text = "PRIX TOTAL " + "0" + "€"
+        //plate?.prices?.first()?.price
         buttonsListener()
     }
 
     private fun buttonsListener(){
+        var totP = plate?.prices?.first()?.price?.toFloat()
         binding.boutonPlus.setOnClickListener {
             qt++
+            var totalP = totP?.times(qt)
             binding.quantity.text = qt.toString()
+            binding.boutonTotal.text = "PRIX TOTAL " + totalP.toString() + "€"
         }
         binding.boutonMoins.setOnClickListener {
             qt--
+            var totalP = totP?.times(qt)
             binding.quantity.text = qt.toString()
+            binding.boutonTotal.text = "PRIX TOTAL " + totalP.toString() + "€"
         }
     }
 }

@@ -55,7 +55,7 @@ class PlatsActivity : AppCompatActivity() {
             }
         )
         queue.add(request)
-        //showDatas() //Appel de la fonction showDatas juste en dessous
+        //showDatas() Appel de la fonction showDatas juste en dessous
     }
 
     private fun parseData(data: String) {
@@ -66,7 +66,7 @@ class PlatsActivity : AppCompatActivity() {
 
 
     private fun showDatas(category: com.example.androidrestaurant.network.Category){
-        binding.recyclerView.layoutManager = LinearLayoutManager(this) //ON AFFICHE LISTE DE STRING, ON VEUT AFFICHER LISTE DE PLAT
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = CustomAdapter(category.items){
             val intent = Intent(this, DetailActivity::class.java) //Quand on clique sur le plat, on est redirigé vers DetailActivity qui est le détail du plat sélectionné
             intent.putExtra(DetailActivity.PLATE_EXTRA, it)
