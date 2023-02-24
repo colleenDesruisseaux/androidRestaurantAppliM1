@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4CA96">
+    android:background="#F4CA96"
+    android:backgroundTint="#F4CA96">
 
     <TextView
         android:id="@+id/itemName"
