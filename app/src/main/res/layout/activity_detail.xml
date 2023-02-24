@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4CA96"
-    android:backgroundTint="#F4CA96"
+    android:background="#DEDACE"
+    android:backgroundTint="#DEDACE"
     tools:context=".DetailActivity">
 
     <TextView
@@ -36,19 +36,43 @@
         android:id="@+id/boutonPlus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="176dp"
-        android:backgroundTint="#CA3C3C"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="240dp"
+        android:backgroundTint="#225332"
         android:text="+"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/quantity"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/boutonMoins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:layout_marginEnd="56dp"
+        android:backgroundTint="#225332"
+        android:text="-"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/quantity"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Combien en voulez-vous ?"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     <TextView
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         android:text="0"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,39 +80,16 @@
         app:layout_constraintTop_toBottomOf="@+id/nb" />
 
     <Button
-        android:id="@+id/boutonMoins"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="60dp"
-        android:backgroundTint="#CA3C3C"
-        android:text="-"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/quantity"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
         android:id="@+id/boutonTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
-        android:backgroundTint="#CA3C3C"
+        android:layout_marginBottom="88dp"
+        android:backgroundTint="#99030C"
         android:text="TOTAL "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/nb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Combien en voulez-vous ?"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/panier"

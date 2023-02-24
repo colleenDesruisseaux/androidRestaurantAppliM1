@@ -5,39 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DEDACE"
-    android:backgroundTint="#DEDACE">
+    android:backgroundTint="#DEDACE"
+    tools:context=".PanierActivity">
 
-    <TextView
-        android:id="@+id/itemName"
+    <Button
+        android:id="@+id/order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="200dp"
+        android:text="Commander"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemName"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/priceTextView"
+        android:id="@+id/com"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:text="TextView"
+        android:layout_marginTop="420dp"
+        android:text="N'oubliez pas de valider votre panier en cliquant sur le bouton ci-dessous :"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/recap"
+        android:layout_width="204dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="40dp"
+        android:text="Récapitulatif de votre commande "
+        android:textAlignment="center"
+        android:textColor="#7D735F"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

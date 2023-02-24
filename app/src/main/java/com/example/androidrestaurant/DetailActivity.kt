@@ -1,15 +1,11 @@
 package com.example.androidrestaurant
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import com.example.androidrestaurant.databinding.ActivityDetailBinding
 import com.example.androidrestaurant.network.Plate
-import com.example.androidrestaurant.network.Price
-import com.squareup.picasso.Picasso
 
 class DetailActivity : AppCompatActivity() {
 
@@ -32,6 +28,7 @@ class DetailActivity : AppCompatActivity() {
         binding.quantity.text = qt.toString()
         binding.boutonTotal.text = "PRIX TOTAL " + "0" + "€"
         binding.nbArticle.text = "0"
+        supportActionBar?.title = "Détails"
         buttonsListener()
     }
 
@@ -55,6 +52,11 @@ class DetailActivity : AppCompatActivity() {
         binding.boutonTotal.setOnClickListener {
             binding.nbArticle.text = binding.quantity.text
             Toast.makeText(this, "${binding.quantity.text} articles ajoutés au panier !", Toast.LENGTH_LONG).show()
+        }
+
+        binding.panier.setOnClickListener{
+            val intent = Intent(this, PanierActivity::class.java)
+            startActivity(intent)
         }
     }
 }
