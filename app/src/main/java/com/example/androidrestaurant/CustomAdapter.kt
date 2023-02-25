@@ -27,9 +27,13 @@ class CustomAdapter(val items: List<Plate>, val clickListener: (Plate) -> Unit) 
 
     override fun onBindViewHolder(holder: CellViewHolder, position: Int) {
         val plate = items[position]
+        //Nom du plat
         holder.textView.text = plate.name
+        //Prix du plat
         holder.priceTextView.text = plate.prices.first().price + " €"
+        //Image du plat
         Picasso.get().load(getThumbnail(plate)).into(holder.imageView)
+        //Clic sur le plat
         holder.root.setOnClickListener{
             Log.d("click", "click on ${position+1}")
             clickListener(plate)
@@ -37,6 +41,7 @@ class CustomAdapter(val items: List<Plate>, val clickListener: (Plate) -> Unit) 
     }
 
     private fun getThumbnail(plate: Plate): String? {
+        //Gestion des plats qui ont ou pas des images. Echec creation viewPager...
         return if (plate.images.isNotEmpty() && plate.images.firstOrNull()?.isNotEmpty() == true){
             plate.images.firstOrNull()
         }else{

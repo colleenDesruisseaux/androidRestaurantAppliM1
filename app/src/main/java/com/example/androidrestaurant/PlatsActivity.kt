@@ -31,6 +31,8 @@ class PlatsActivity : AppCompatActivity() {
 
         val category = intent.getSerializableExtra(extraKey) as? Category
         currentCategory = category ?: Category.STARTER
+
+        //Titre de la page
         supportActionBar?.title = categoryName() //STARTER est par défaut
         //if category == null { category = STARTER }
         makeRequest()
